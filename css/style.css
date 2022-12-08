@@ -25,3 +25,8 @@
 input, select{
     box-shadow: none !important;
 }
+.err1, .err2, .err3, .err6{
+    color: red;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
