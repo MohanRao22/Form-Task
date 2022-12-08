@@ -1,3 +1,6 @@
+body{
+    
+}
 #submit{
     background-color: #B4975A;
     border: none;
@@ -20,7 +23,7 @@
 }
 .please-note{
     font-size: 15px;
-    text-align: center;
+    
 }
 input, select{
     box-shadow: none !important;
@@ -29,4 +32,21 @@ input, select{
     color: red;
     font-weight: 600;
     letter-spacing: 2px;
+}
+.whole{
+    background: #eee;
+}
+.fix-size{
+    font-size: 18px;
+    line-height: 35px;
+}
+.text-1{
+    font-size: 25px;
+}
+
+/* media */
+@media (min-width:1020px) and (max-width:3000px){
+    form{
+        padding: 30px 130px;
+    }
 }
