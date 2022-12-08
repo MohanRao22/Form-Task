@@ -1,0 +1,27 @@
+#submit{
+    background-color: #B4975A;
+    border: none;
+    padding: 6px;
+    color: white;
+    margin-top: 15px;
+}
+.prior-text{
+    color: #B4975A !important;
+    font-weight: 600;
+}
+.desc{
+    font-size: 15px;
+}
+.line{
+   margin: 10px auto;
+    width: 200px;
+    border: 1px solid black;
+   
+}
+.please-note{
+    font-size: 15px;
+    text-align: center;
+}
+input, select{
+    box-shadow: none !important;
+}
