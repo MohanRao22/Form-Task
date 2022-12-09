@@ -15,6 +15,8 @@ var errorInd = false;
 var errorInd2 = false;
 var errorInd3 = false;
 var errorInd6 = false;
+var nativeValue;
+var nationalityValue;
 
 let firstnameValueFine = true;
 
@@ -112,39 +114,61 @@ phone.addEventListener("keyup", (e) => {
 
 submit.addEventListener("click", (eventSubmit) => {
     eventSubmit.preventDefault();
-    if (error1.innerHTML == "" && error2.innerHTML == "" && error3.innerHTML == "" && error6.innerHTML == "") {
-         var fn = firstname.value;
-         var ln = secondname.value;
-         var nt = nation.value;
-         var ph = phone.value;
-         localStorage.setItem("First Name",fn);
-         localStorage.setItem("Last Name",ln);
-         localStorage.setItem("Nation",nt);
-         localStorage.setItem("Phone",ph);
-         alert("Data Submitted Successfully");
-         clearForm();
+
+
+    if (error1.innerHTML == "" && error2.innerHTML == "" && error6.innerHTML == "") {
+        if ((!firstname.value == "" && !secondname.value == "" && !phone.value == "")) {
+            var fn = firstname.value;
+            var ln = secondname.value;
+            var nt = nativeValue;
+            var cnty = nationalityValue
+            var ph = phone.value;
+            localStorage.setItem("First Name", fn);
+            localStorage.setItem("Last Name", ln);
+            localStorage.setItem("Nation", cnty);
+            localStorage.setItem("Phone", ph);
+            localStorage.setItem("Location", nt);
+            alert("Data Submitted Successfully");
+            clearForm();
+        } else {
+            alert("Please fill all required fields..");
+            return false;
+        }
     } else {
         if (!(error1.innerHTML == "")) {
             alert("Please fill all required fields..!")
             firstname.focus();
-        } if(!(error2.innerHTML == "")){
+        } if (!(error2.innerHTML == "")) {
             alert("Please fill all required fields..!")
-             secondname.focus();
+            secondname.focus();
         }
-        if(!(error3.innerHTML == "")){
+        // if (!(error3.innerHTML == "")) {
+        //     alert("Please fill all required fields..!")
+        //     nation.focus();
+        // }
+        if (!(error6.innerHTML == "")) {
             alert("Please fill all required fields..!")
-            nation.focus();
-       }
-       if(!(error6.innerHTML == "")){
-        alert("Please fill all required fields..!")
-        phone.focus();
-   }
+            phone.focus();
+        }
     }
 });
 
 
-function clearForm(){
-   document.querySelector("form").reset();
+function clearForm() {
+    document.querySelector("form").reset();
 
 }
 
+
+
+live.addEventListener("change", () => {
+    var e = document.getElementById("live");
+    nativeValue  = e.options[e.selectedIndex].value;
+    console.log(nativeValue);
+    
+});
+
+nation.addEventListener("change",()=>{
+    nationalityValue = nation.options[nation.selectedIndex].value;
+    console.log(nationalityValue);
+})

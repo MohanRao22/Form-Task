@@ -7,6 +7,7 @@ body{
     padding: 6px;
     color: white;
     margin-top: 15px;
+    width: 250px;
 }
 .prior-text{
     color: #B4975A !important;
@@ -16,7 +17,7 @@ body{
     font-size: 15px;
 }
 .line{
-   margin: 10px auto;
+   margin: 20px auto;
     width: 200px;
     border: 1px solid black;
    
@@ -42,6 +43,9 @@ input, select{
 }
 .text-1{
     font-size: 25px;
+}
+.agr{
+    display: initial;
 }
 
 /* media */
